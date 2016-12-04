@@ -711,6 +711,9 @@ function! fireplace#op_available(op) abort
 endfunction
 
 function! fireplace#findresource(resource, ...) abort
+  if filereadable(a:resource)
+    return a:resource
+  endif
   if a:resource ==# ''
     return ''
   endif
