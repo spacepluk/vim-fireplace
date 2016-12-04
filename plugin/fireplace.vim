@@ -1335,7 +1335,7 @@ function! fireplace#info(symbol) abort
         \ . '(if-let [m (meta (resolve ' . sym .'))]'
         \ .   ' {:name (:name m)'
         \ .    ' :ns (:ns m)'
-        \ .    ' :macro (when (:macro m) true)'
+        \ .    ' :macro (boolean (:macro m))'
         \ .    ' :resource (:file m)'
         \ .    ' :line (:line m)'
         \ .    ' :doc (:doc m)'
